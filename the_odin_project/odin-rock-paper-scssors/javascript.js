@@ -30,9 +30,8 @@ function getPlayerChoice() {
   let keepGoing = true;
   let playerChoice = prompt("Choose rock, paper, or scissors.");
   playerChoice = playerChoice.toLowerCase();
-  console.log(playerChoice);
 
-  //need to convert choice to lower and break loop when cancel button is hit
+  //check if choice is valid, otherwise ask player again
   while (keepGoing == true) {
     if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
       return playerChoice;
