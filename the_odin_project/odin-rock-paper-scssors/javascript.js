@@ -5,7 +5,20 @@ function playRound(playerSelection, computerSelection) {
 //return (playerOption);
 //get computer choice
 //determine winner
+let winner = getWinner(playerSelection, computerSelection);
+if (winner == "tie") {
+  console.log("Tie!");
+  //playRound(playerSelection, computerSelection);
+} else if (winner == "win") {
+  console.log("You win! " + playerSelection + " beats " + computerSelection)
+} else {
+  console.log("You lose! " + computerSelection + " beats " + playerSelection)
 }
+}
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
 
 // generate random integer
 function getRndInteger(min, max) {
@@ -44,6 +57,7 @@ function getPlayerChoice() {
     }
 }
 
+//check for tie and winner
 function getWinner(playerPick, computerPick) {
   switch (playerPick) {
     case computerPick:
@@ -71,5 +85,4 @@ function getWinner(playerPick, computerPick) {
         }
         break;
   }
-  
 }
