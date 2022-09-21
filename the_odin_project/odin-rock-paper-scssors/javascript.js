@@ -1,5 +1,22 @@
 //play one game of rock paper scissors
+function game() {
+  let playerWin = 0;
+  let computerWin = 0;
+  for (let i = 0; i < 5; i++){
+    let computerSelection = getComputerChoice();
+    let playerSelection = getPlayerChoice();
+    let result = playRound(playerSelection, computerSelection);
 
+    //if (result == "win") {
+    //  playerWin++;
+    //} else if (result == "lose") {
+     // computerWin++;
+    //} else {
+
+   // }
+     
+  }
+}
 
 // play one round of rock paper scissors
 function playRound(playerSelection, computerSelection) {
@@ -18,9 +35,9 @@ if (winner == "tie") {
 }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+//const playerSelection = "rock";
+//const computerSelection = getComputerChoice();
+//console.log(playRound(playerSelection, computerSelection));
 
 // generate random integer
 function getRndInteger(min, max) {
