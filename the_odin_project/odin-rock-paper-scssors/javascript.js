@@ -1,18 +1,20 @@
+//play one game of rock paper scissors
+
+
 // play one round of rock paper scissors
 function playRound(playerSelection, computerSelection) {
-//get player choice
-//let playerOption = getPlayerChoice;
-//return (playerOption);
-//get computer choice
 //determine winner
 let winner = getWinner(playerSelection, computerSelection);
 if (winner == "tie") {
   console.log("Tie!");
+  return winner;
   //playRound(playerSelection, computerSelection);
 } else if (winner == "win") {
   console.log("You win! " + playerSelection + " beats " + computerSelection)
+  return winner;
 } else {
   console.log("You lose! " + computerSelection + " beats " + playerSelection)
+  return winner;
 }
 }
 
