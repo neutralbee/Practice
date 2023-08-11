@@ -1,38 +1,47 @@
 //play one game of rock paper scissors
 function game() {
-  let playerWin = 0;
-  let computerWin = 0;
+  let playerWins = 0;
+  let computerWins = 0;
   for (let i = 0; i < 5; i++){
     let computerSelection = getComputerChoice();
     let playerSelection = getPlayerChoice();
     let result = playRound(playerSelection, computerSelection);
-
-    //if (result == "win") {
-    //  playerWin++;
-    //} else if (result == "lose") {
-     // computerWin++;
-    //} else {
-
-   // }
-     
+    
+    if (result == "win") {
+      console.log("You win! " + playerSelection + " beats " + computerSelection);
+      playerWins++;
+    } else if (result == "lose") {
+      console.log("You lose! " + computerSelection + " beats " + playerSelection);
+      computerWins++;
+    } else {
+      console.log("Tie!");
+      continue;
+    }
   }
+
+  if (playerWins == computerWins) {
+    console.log("Tie game!");
+  } else if (playerWins > computerWins) {
+    console.log("Player wins!");
+  } else {
+    console.log("Computer wins!");
+  }
+     
 }
 
 // play one round of rock paper scissors
 function playRound(playerSelection, computerSelection) {
+  let playerPick = playerSelection;
+  let computerPick = computerSelection;
 //determine winner
-let winner = getWinner(playerSelection, computerSelection);
-if (winner == "tie") {
-  console.log("Tie!");
-  return winner;
-  //playRound(playerSelection, computerSelection);
-} else if (winner == "win") {
-  console.log("You win! " + playerSelection + " beats " + computerSelection)
-  return winner;
-} else {
-  console.log("You lose! " + computerSelection + " beats " + playerSelection)
-  return winner;
-}
+  if (getWinner(playerPick, computerPick) == "win") {
+    return "win"
+  } else if (getWinner(playerPick, computerPick) == "tie") {
+    return "tie";
+  } else {
+    return "lose";
+  }
+
 }
 
 //const playerSelection = "rock";
